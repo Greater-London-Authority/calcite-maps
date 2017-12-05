@@ -304,8 +304,7 @@ body {
   -webkit-flex-flow: row nowrap;
   flex-flow: row nowrap;
   justify-content: flex-start;
-  align-content: stretch;
-  box-shadow: 0 0 0.5em 0 #333; }
+  align-content: stretch; }
   .calcite-navbar .navbar-header {
     order: 0;
     flex-shrink: 0; }
@@ -479,7 +478,8 @@ body {
   margin: 15px; }
 
 .calcite-navbar.calcite-bg-dark.navbar {
-  background-color: #333333; }
+  background-color: #333333;
+  box-shadow: 0 0 0.5em 0 #333333; }
 
 .calcite-navbar.calcite-text-light .navbar-brand {
   color: #ffffff; }
@@ -559,7 +559,8 @@ body {
   background-image: linear-gradient(to bottom, transparent 96%, #ffffff 2px); }
 
 .calcite-navbar.calcite-bg-light.navbar {
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  box-shadow: 0 0 0.5em 0 #cccccc; }
 
 .calcite-navbar.calcite-text-dark .navbar-brand {
   color: #323232; }
@@ -791,7 +792,7 @@ body {
 
 .calcite-panels {
   z-index: 2;
-  opacity: 0.8;
+  opacity: 0.9;
   -webkit-transition: opacity 0.25s ease-in-out;
   -moz-transition: opacity 0.25s ease-in-out;
   -ms-transition: opacity 0.25s ease-in-out;
@@ -805,9 +806,7 @@ body {
     margin-top: 0;
     border: none;
     font-size: 13px;
-    background-color: inherit;
-    border-radius: 2px;
-    box-shadow: 0 0 0.5em 0; }
+    background-color: inherit; }
   .calcite-panels .panel + .panel {
     margin-top: 0; }
   .calcite-panels .panel-heading {
@@ -1023,7 +1022,8 @@ body {
     background-color: #ffffff; }
 
 .calcite-panels.calcite-text-light .panel {
-  color: #ffffff; }
+  color: #ffffff;
+  box-shadow: 0 0 0.5em #333333; }
 
 .calcite-panels.calcite-text-light .panel-heading {
   color: #ffffff; }
@@ -1100,7 +1100,8 @@ body {
     background-color: #ffffff; }
 
 .calcite-panels.calcite-text-dark .panel {
-  color: #4c4c4c; }
+  color: #4c4c4c;
+  box-shadow: 0 0 0.5em #cccccc; }
 
 .calcite-panels.calcite-text-dark .panel-heading {
   color: #595959; }

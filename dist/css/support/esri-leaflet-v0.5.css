@@ -12,19 +12,14 @@
   z-index: 1000; }
 
 .calcite-map .leaflet-control-zoom.leaflet-control {
-  margin: 15px 15px 30px 15px; }
+  margin: 15px 15px 30px 15px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
 
 .calcite-map .leaflet-control-zoom.leaflet-bar > a {
   width: 30px;
   height: 30px;
   line-height: 30px;
   border-radius: 0; }
-
-.calcite-map .leaflet-control-zoom.leaflet-bar > a.leaflet-control-zoom-in {
-  border-radius: 2px 2px 0 0; }
-
-.calcite-map .leaflet-control-zoom.leaflet-bar > a.leaflet-control-zoom-out {
-  border-radius: 0 0 2px 2px; }
 
 .calcite-nav-top .calcite-map .leaflet-control-zoom {
   margin-top: 65px; }

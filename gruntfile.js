@@ -84,7 +84,16 @@ module.exports = function (grunt) {
           return dest + '/' + src.replace(/calcitemaps/, "calcitemaps-v0.5");
     		},
 			},
-			calcitemapsjquery: {
+			bootstrapaddons: {
+				expand: true,
+				flatten: true,
+				src: ['./lib/js/bootstrap/*.js'],
+				dest:	'./dist/js/bootstrap/',
+				rename: function(dest, src) {
+          return dest + '/' + src.replace(/calcitemaps/, "calcitemaps-v0.5");
+    		},
+			},
+			esrileafletplugins: {
 				expand: true,
 				flatten: true,
 				src: ['./lib/js/esri-leaflet-plugins/*.js'],
@@ -132,5 +141,5 @@ module.exports = function (grunt) {
 
 	});
 	// Default tasks
-	grunt.registerTask('default', ['sass', 'cssmin', 'copy:calcitemapsdojo', 'copy:calcitemapsjquery', 'copy:bootstrapfonts', 'copy:calciteiconfonts', 'copy:calcitefonts', 'copy:vendor']);
+	grunt.registerTask('default', ['sass', 'cssmin', 'copy:calcitemapsdojo', 'copy:calcitemapsjquery', 'copy:esrileafletplugins', 'copy:bootstrapaddons', 'copy:bootstrapfonts', 'copy:calciteiconfonts', 'copy:calcitefonts', 'copy:vendor']);
 };
