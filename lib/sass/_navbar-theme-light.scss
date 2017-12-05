@@ -13,12 +13,13 @@
 
     &.navbar {
       background-color: $theme_light_navbar_bg;
+      box-shadow: 0 0 0.5em 0 $Calcite_Gray_350;
     }
 
   }
 
   &.calcite-text-dark {
-    
+
     // Brand
 
     .navbar-brand {
@@ -35,7 +36,7 @@
 
     .calcite-title-main {
       color: $theme_light_navbar_text_color;
-    } 
+    }
 
     .calcite-title-divider {
       color: $theme_light_navbar_text_color_secondary;
@@ -44,12 +45,12 @@
 
     .calcite-title-sub {
       color: $theme_light_navbar_text_color_secondary;
-    } 
+    }
 
 
 
     // Optional
-    // .calcite-title:hover, 
+    // .calcite-title:hover,
     // .calcite-title:focus {
     //   color: $theme_light_nav_bg_hover;
     // }
@@ -73,7 +74,7 @@
     }
 
     // Nav
-    
+
     .navbar-nav > li > a {
       color: $theme_light_navbar_text_color;
     }
@@ -126,4 +127,3 @@
     }
   }
 }
-

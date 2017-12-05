@@ -4,7 +4,7 @@
 //
 // Dark background, light text
 // Styles for navbar and dropdown menu
-  
+
 .calcite-navbar {
 
   // Navbar (for dark theme)
@@ -12,13 +12,14 @@
   &.calcite-bg-dark {
     &.navbar {
       background-color: $theme_dark_navbar_bg;
+      box-shadow: 0 0 0.5em 0 $Calcite_Gray_100_Dark;
     }
   }
 
   &.calcite-text-light {
 
     // Brand
-    
+
     .navbar-brand {
       color: $theme_dark_navbar_text_color;
     }
@@ -31,25 +32,25 @@
 
     // Title
 
-    .calcite-title-main {         
+    .calcite-title-main {
       color: $theme_dark_navbar_text_color;
-    } 
+    }
 
-    .calcite-title-divider {         
+    .calcite-title-divider {
       color: $theme_dark_navbar_text_color_secondary;
       opacity: $theme_all_navbar_opacity;
-    } 
+    }
 
-    .calcite-title-sub {         
+    .calcite-title-sub {
       color: $theme_dark_navbar_text_color_secondary;
-    } 
-    
+    }
+
     // Optional
-    //.calcite-title:hover, 
+    //.calcite-title:hover,
     //.calcite-title:focus {
       // color: $theme_dark_nav_bg_hover;
     //}
-    
+
     // Toggle button
 
     .dropdown-toggle .icon-bar {
@@ -63,17 +64,17 @@
     }
 
     // Toggle menu animated
-    
+
     .calcite-dropdown-toggle span {
       background-color: $theme_dark_control_text_color;
     }
 
     // Nav
-    
+
     .navbar-nav > li > a {
       color: $theme_dark_navbar_text_color;
     }
-    
+
     .navbar-nav > li > a:hover,
     .navbar-nav > li > a:focus,
     .navbar-nav > .active > a,

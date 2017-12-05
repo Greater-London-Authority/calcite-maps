@@ -4,9 +4,9 @@
 //
 // Light background, dark text (defaults)
 // Text color, hover and background for panels and controls
-  
+
 .calcite-panels {
-  
+
   &.calcite-bg-light {
     background-color: $theme_light_panel_bg;
 
@@ -46,12 +46,12 @@
       padding-top: 5px;
     }
 
-    input, 
+    input,
     textarea,
     select {
       background-color: transparent;
-      border: 1px solid $theme_light_control_border_color;  
-      color: $theme_light_panel_text_color;     
+      border: 1px solid $theme_light_control_border_color;
+      color: $theme_light_panel_text_color;
     }
     option {
       color: $theme_light_panel_text_color;
@@ -64,6 +64,7 @@
 
     .panel {
       color: $theme_light_panel_text_color;
+      box-shadow: 0 0 0.5em $Calcite_Gray_350;      
     }
 
     // Header
@@ -84,18 +85,18 @@
     }
 
     // Close
-    
+
     .panel-close {
       color: $theme_light_panel_header_close_color;
     }
-    
+
     .panel-close:focus,
     .panel-close:hover {
       color: $theme_light_panel_header_text_color_hover;
     }
-    
+
     // Tabs
-    
+
     .nav-tabs > li > a {
       color: $theme_light_control_text_color;
     }
@@ -105,7 +106,7 @@
     }
 
     // Form controls
-    input, 
+    input,
     textarea,
     select {
       color: $theme_light_control_text_color;
@@ -134,5 +135,5 @@
         border-bottom: 1px solid $theme_light_panel_header_bg;
       }
     }
-  }  
+  }
 }
