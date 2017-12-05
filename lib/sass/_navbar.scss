@@ -43,6 +43,7 @@
     order: 2;
     flex-shrink: 0;
     margin: 0;
+    box-shadow: 0 0 0.5em 0 #333;
   }
 
   // Nav items
@@ -60,7 +61,7 @@
   order: 1;
   flex-grow: 1;
   margin: 0;
-  line-height: 1.5; 
+  line-height: 1.5;
   display: flex;
   align-items: center;
 }
@@ -69,7 +70,7 @@
   flex-shrink: 0;
   margin: $navbar_title_margin;
   padding: $navbar_title_padding;
-  overflow: hidden;  
+  overflow: hidden;
   font-size: $navbar_title_font_size;
   font-weight: $navbar_title_font_weight;
 }

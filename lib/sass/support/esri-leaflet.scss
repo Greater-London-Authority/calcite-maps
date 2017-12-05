@@ -6,9 +6,9 @@
 
 // Calcite icons - remove padding
 
-[class^="esri-icon-"]:before, 
-[class*=" esri-icon-"]:before, 
-[class^="icon-ui-"]:before, 
+[class^="esri-icon-"]:before,
+[class*=" esri-icon-"]:before,
+[class^="icon-ui-"]:before,
 [class*=" icon-ui-"]:before {
   padding: 0;
   line-height: 1;
@@ -35,6 +35,15 @@
     line-height: 30px;
     border-radius: 0;
   }
+
+  .leaflet-control-zoom.leaflet-bar > a.leaflet-control-zoom-in {
+      border-radius: 2px 2px 0 0;
+  }
+
+  .leaflet-control-zoom.leaflet-bar > a.leaflet-control-zoom-out {
+      border-radius: 0 0 2px 2px;
+  }
+  
 }
 
 // Navbar top
@@ -54,7 +63,7 @@
       margin-top: 80px;
     }
   }
-} 
+}
 
 // Navbar bottom
 
@@ -67,7 +76,7 @@
   }
 }
 
-// Logo 
+// Logo
 
 .calcite-map {
 
@@ -107,7 +116,7 @@
 // Search Control
 
 .geocoder-control .geocoder-control-input {
-  padding: 7px;
+  padding: 5px;
   box-shadow: none;
   border-radius: 0;
   border: 1px #959595 solid;

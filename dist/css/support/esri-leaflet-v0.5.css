@@ -20,6 +20,12 @@
   line-height: 30px;
   border-radius: 0; }
 
+.calcite-map .leaflet-control-zoom.leaflet-bar > a.leaflet-control-zoom-in {
+  border-radius: 2px 2px 0 0; }
+
+.calcite-map .leaflet-control-zoom.leaflet-bar > a.leaflet-control-zoom-out {
+  border-radius: 0 0 2px 2px; }
+
 .calcite-nav-top .calcite-map .leaflet-control-zoom {
   margin-top: 65px; }
 
@@ -57,7 +63,7 @@
   bottom: auto; }
 
 .geocoder-control .geocoder-control-input {
-  padding: 7px;
+  padding: 5px;
   box-shadow: none;
   border-radius: 0;
   border: 1px #959595 solid; }
