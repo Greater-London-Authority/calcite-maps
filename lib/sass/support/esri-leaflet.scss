@@ -27,6 +27,7 @@
 .calcite-map {
   .leaflet-control-zoom.leaflet-control {
     margin: 15px 15px 30px 15px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .leaflet-control-zoom.leaflet-bar > a {
@@ -36,14 +37,6 @@
     border-radius: 0;
   }
 
-  .leaflet-control-zoom.leaflet-bar > a.leaflet-control-zoom-in {
-      border-radius: 2px 2px 0 0;
-  }
-
-  .leaflet-control-zoom.leaflet-bar > a.leaflet-control-zoom-out {
-      border-radius: 0 0 2px 2px;
-  }
-  
 }
 
 // Navbar top
