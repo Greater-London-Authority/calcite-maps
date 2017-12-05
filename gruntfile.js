@@ -9,11 +9,11 @@ var banner = '/* <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.toda
 				'*  Copyright (c) <%= grunt.template.today("yyyy") %> Environmental Systems Research Institute, Inc.\n' +
 				'*  Apache 2.0 License */\n';
 
-module.exports = function (grunt) {  
-	require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);  
-	// Project configuration.  
-	grunt.initConfig({  
-		pkg: grunt.file.readJSON('package.json'), 
+module.exports = function (grunt) {
+	require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
+	// Project configuration.
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
 
 		// Build CSS from SASS
 		'sass': {
@@ -32,10 +32,10 @@ module.exports = function (grunt) {
 					'dist/css/support/esri-leaflet-v0.5.css': 'lib/sass/support/esri-leaflet.scss'
 				}
 			}
-		}, 
+		},
 
 		// Minify CSS
-		cssmin: {  
+		cssmin: {
 			target: {
 				options: {
 					banner: banner
@@ -84,6 +84,15 @@ module.exports = function (grunt) {
           return dest + '/' + src.replace(/calcitemaps/, "calcitemaps-v0.5");
     		},
 			},
+			calcitemapsjquery: {
+				expand: true,
+				flatten: true,
+				src: ['./lib/js/esri-leaflet-plugins/*.js'],
+				dest:	'./dist/js/esri-leaflet-plugins/',
+				rename: function(dest, src) {
+          return dest + '/' + src.replace(/calcitemaps/, "calcitemaps-v0.5");
+    		},
+			},
 			bootstrapfonts: {
 				expand: true,
 				flatten: true,
@@ -121,7 +130,7 @@ module.exports = function (grunt) {
     //   src: ['**']
     // }
 
-	});  
+	});
 	// Default tasks
 	grunt.registerTask('default', ['sass', 'cssmin', 'copy:calcitemapsdojo', 'copy:calcitemapsjquery', 'copy:bootstrapfonts', 'copy:calciteiconfonts', 'copy:calcitefonts', 'copy:vendor']);
 };
