@@ -304,7 +304,8 @@ body {
   -webkit-flex-flow: row nowrap;
   flex-flow: row nowrap;
   justify-content: flex-start;
-  align-content: stretch; }
+  align-content: stretch;
+  box-shadow: 0 0 0.5em 0 #333; }
   .calcite-navbar .navbar-header {
     order: 0;
     flex-shrink: 0; }
@@ -318,8 +319,7 @@ body {
     display: flex;
     order: 2;
     flex-shrink: 0;
-    margin: 0;
-    box-shadow: 0 0 0.5em 0 #333; }
+    margin: 0; }
   .calcite-navbar .navbar-nav > li > a {
     padding: 15px 15px;
     font-size: 14px; }

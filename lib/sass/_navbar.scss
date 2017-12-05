@@ -16,6 +16,7 @@
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-content: stretch;
+  box-shadow: 0 0 0.5em 0 #333;
 
   // Header
 
@@ -43,7 +44,6 @@
     order: 2;
     flex-shrink: 0;
     margin: 0;
-    box-shadow: 0 0 0.5em 0 #333;
   }
 
   // Nav items
