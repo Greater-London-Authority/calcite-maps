@@ -478,7 +478,8 @@ body {
   margin: 15px; }
 
 .calcite-navbar.calcite-bg-dark.navbar {
-  background-color: #333333; }
+  background-color: #333333;
+  box-shadow: 0 0 0.5em 0 #333333; }
 
 .calcite-navbar.calcite-text-light .navbar-brand {
   color: #ffffff; }
@@ -558,7 +559,8 @@ body {
   background-image: linear-gradient(to bottom, transparent 96%, #ffffff 2px); }
 
 .calcite-navbar.calcite-bg-light.navbar {
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  box-shadow: 0 0 0.5em 0 #cccccc; }
 
 .calcite-navbar.calcite-text-dark .navbar-brand {
   color: #323232; }
@@ -789,13 +791,20 @@ body {
   color: #4c4c4c; }
 
 .calcite-panels {
-  z-index: 2; }
+  z-index: 2;
+  opacity: 0.9;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -ms-transition: opacity 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out; }
+  .calcite-panels:hover {
+    opacity: 0.98; }
   .calcite-panels.panel-group {
     margin-bottom: 0; }
   .calcite-panels .panel {
     margin-top: 0;
     border: none;
-    border-radius: 0;
     font-size: 13px;
     background-color: inherit; }
   .calcite-panels .panel + .panel {
@@ -813,7 +822,7 @@ body {
     padding-left: 5px; }
   .calcite-panels .panel-toggle {
     flex: 1;
-    padding: 7px 0px 0 10px;
+    padding: 7px 10px 0 10px;
     text-decoration: none;
     min-width: 32px; }
     .calcite-panels .panel-toggle .glyphicon {
@@ -835,7 +844,8 @@ body {
     min-height: 50px;
     max-height: 500px;
     font-size: 13px;
-    overflow-x: hidden; }
+    overflow-x: hidden;
+    -ms-overflow-style: scrollbar; }
     .calcite-panels .panel-body button {
       font-size: 13px; }
     .calcite-panels .panel-body input,
@@ -1012,7 +1022,8 @@ body {
     background-color: #ffffff; }
 
 .calcite-panels.calcite-text-light .panel {
-  color: #ffffff; }
+  color: #ffffff;
+  box-shadow: 0 0 0.5em #333333; }
 
 .calcite-panels.calcite-text-light .panel-heading {
   color: #ffffff; }
@@ -1089,7 +1100,8 @@ body {
     background-color: #ffffff; }
 
 .calcite-panels.calcite-text-dark .panel {
-  color: #4c4c4c; }
+  color: #4c4c4c;
+  box-shadow: 0 0 0.5em #cccccc; }
 
 .calcite-panels.calcite-text-dark .panel-heading {
   color: #595959; }
@@ -1251,3 +1263,17 @@ body {
 
 .calcite-maps .tooltip.in {
   opacity: 1; }
+
+.calcite-maps .popover-title {
+  color: #dcdcdc;
+  background-color: #191919; }
+
+.calcite-maps .popover-content {
+  color: #dcdcdc;
+  background-color: #191919; }
+
+.modal-backdrop {
+  z-index: 999; }
+
+.modal-content {
+  color: #333; }
