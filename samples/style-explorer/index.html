@@ -14,13 +14,13 @@
   <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
 
   <!-- Calcite Maps Bootstrap -->
-  <link rel="stylesheet" href="../../dist/css/calcite-maps-bootstrap-v0.6.css">
+  <link rel="stylesheet" href="../../dist/css/calcite-maps-bootstrap-v0.9.css">
 
   <!-- Calcite Maps -->
-  <link rel="stylesheet" href="../../dist/css/calcite-maps-arcgis-4.x.min-v0.6.css">
+  <link rel="stylesheet" href="../../dist/css/calcite-maps-arcgis-4.x.min-v0.9.css">
   
   <!-- ArcGIS JS 4.x -->
-  <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/css/main.css">
+  <link rel="stylesheet" href="https://js.arcgis.com/4.9/esri/css/main.css">
   <!--link rel="stylesheet" href="../../dist/css/arcgis/themes/light/main.css"-->
 
   <style>
@@ -30,7 +30,7 @@
       height: 100%;
     }
 
-    #panelLegend .panel-body {
+    .body-light {
       background-color: white;
     }
 
@@ -55,7 +55,7 @@
       margin-top: -17px;
       margin-right: -21px;
       font-size: 14px;
-      color: #828282;
+      /*color: #828282;*/
     }
     .btn-color-close:hover,
     .btn-color-close:focus {
@@ -112,11 +112,11 @@
 
 </head>
 
-<body class="calcite-nav-top">
+<body class="calcite-maps calcite-nav-top">
 
   <!-- Navbar -->
 
-  <nav class="navbar navbar-fixed-top calcite-navbar calcite-bg-custom calcite-text-light" style="background-color: rgb(76, 76, 76);">
+  <nav class="navbar navbar-fixed-top calcite-navbar calcite-bg-dark calcite-text-light">
      <!-- Menu -->
     <div class="dropdown calcite-dropdown calcite-bg-light calcite-text-dark" role="presentation">
       <!--a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"-->
@@ -138,6 +138,7 @@
         <li><a role="menuitem" tabindex="0" data-target="#panelBasemaps" aria-haspopup="true"><span class="glyphicon glyphicon-th-large"></span> Basemaps</a></li>
         <li><a role="menuitem" tabindex="0" data-target="#panelBookmarks" aria-haspopup="true"><span class="glyphicon glyphicon-book"></span> Bookmarks</a></li>
         <li><a role="menuitem" tabindex="0" data-target="#panelLegend" aria-haspopup="true"><span class="glyphicon glyphicon-list"></span> Legend</a></li>
+         <li><a role="menuitem" tabindex="0" data-target="#panelLayerlist" aria-haspopup="true"><span class="glyphicon glyphicon-list-alt"></span> LayerList</a></li>
         <li><a role="menuitem" tabindex="0" data-target="#panelPrint" aria-haspopup="true"><span class="glyphicon glyphicon-print"></span> Print</a></li>
         <li><a role="menuitem" tabindex="0" data-target="#panelShare" aria-haspopup="true"><span class="glyphicon glyphicon-share"></span> Share</a></li>
         <li><a role="menuitem" tabindex="0" data-target="#panelSettings" aria-haspopup="true"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
@@ -153,7 +154,7 @@
     <!-- Nav -->
     <ul class="calcite-nav nav navbar-nav">                    
       <li class="active"><a id="mapNav" class="hidden-xs hidden-sm" href="#mapTab" aria-controls="mapTab" aria-expanded="true" role="tab" data-toggle="tab" data-tooltip="tip" title="2D View" data-placement="bottom">Map</a></li>
-      <li><a id="sceneNav" class="hidden-xs hidden-sm" href="#sceneTab" aria-controls="sceneTab" role="tab" data-toggle="tab" data-tooltip="tip" title="3D View" data-placement="bottom">Scene</a></li>                  
+      <li><a id="sceneNav" class="hidden-xs hidden-sm" href="#sceneTab" aria-controls="sceneTab" role="tab" data-toggle="tab" data-tooltip="tip" title="3D View" data-placement="bottom">Scene</a></li>   
       <li><div class="calcite-navbar-search calcite-search-expander" tabindex="-1"><div id="searchNavDiv" tabindex="0"></div></div></li>
     </ul>
   </nav><!--/.navbar -->
@@ -202,7 +203,7 @@
 
   <!-- Panel Container -->
   
-  <div class="calcite-panels calcite-panels-right calcite-bg-custom calcite-text-light panel-group" role="tablist" aria-multiselectable="true" style="background-color: rgb(76, 76, 76);">
+  <div class="calcite-panels calcite-panels-right calcite-bg-dark calcite-text-light panel-group" role="tablist" aria-multiselectable="true">
     
     <!-- Panel - Info -->
 
@@ -326,8 +327,24 @@
         </div>
       </div>
       <div id="collapseLegend" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLegend">
-        <div class="panel-body">            
+        <div class="panel-body body-light">            
           <div id="legendDiv"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel - LayerList -->
+
+    <div id="panelLayerlist" class="panel collapse">
+      <div id="headingLayerlist" class="panel-heading" role="tab">
+        <div class="panel-title">
+          <a class="panel-toggle collapsed" role="button" data-toggle="collapse" href="#collapseLayerlist" aria-expanded="false" aria-controls="collapseLayerlist"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span><span class="panel-label">Layerlist</span></a> 
+          <a class="panel-close" role="button" data-toggle="collapse" tabindex="0" href="#panelLayerlist"><span class="esri-icon esri-icon-close" aria-hidden="true"></span></a> 
+        </div>
+      </div>
+      <div id="collapseLayerlist" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLayerlist">
+        <div class="panel-body body-light">            
+          <div id="layerlistDiv"></div>
         </div>
       </div>
     </div>
@@ -342,10 +359,8 @@
         </div>
       </div>
       <div id="collapsePrint" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingPrint">
-        <div class="panel-body">
-        <div class="form-group">
-           <button type="button" class="btn btn-default">Print [Coming soon!]</button>
-        </div>
+        <div class="panel-body body-light">
+          <div id="printDiv"></div>
         </div>
       </div>
     </div>
@@ -455,25 +470,19 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="settingsAddLayer" class="col-xs-3 control-label">Layer</label>
+                  <label for="settingsAddLayer" class="col-xs-3 control-label">Webmap</label>
                   <div class="col-xs-9">
-                    <input type="text" class="form-control" id="settingsFeatureLayerUrl" placeholder="e.g. https://services.arcgis.com/uCXeTVveQzP4IIcx/arcgis/rest/services/GreaterLosAngelesAreaDemographics/FeatureServer/0" value="https://services.arcgis.com/uCXeTVveQzP4IIcx/arcgis/rest/services/GreaterLosAngelesAreaDemographics/FeatureServer/0">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="settingsLayerOpacity" class="col-xs-3 control-label">Opacity</label>
-                  <div class="col-xs-9">
-                    <select id="settingsLayerOpacity" class="form-control">
-                      <option value="0.25">0.25</option>
-                      <option value="0.50">0.5</option>
-                      <option value="0.75">0.75</option>
-                      <option value="1.0" selected>1.0</option>
-                    </select>
+                    <input type="text" class="form-control" id="settingsWebmapId" placeholder="df5b4bad631d4209b6ef7a88493dac7d">
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-xs-9 col-xs-offset-3">
-                    <button id="settingsAddLayer" type="button" class="btn btn-primary btn-block">Add Layer</button>
+                    <button id="settingsAddWebmap" type="button" class="btn btn-primary btn-block">Add Webmap</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-xs-9 col-xs-offset-3">
+                    <button id="settingsClearWebmap" type="button" class="btn btn-primary btn-block">Clear</button>
                   </div>
                 </div>
               </div>
@@ -700,6 +709,9 @@
                       <option value="home">Home</option>
                       <option value="locate">Locate</option>
                       <option value="compass">Compass</option>
+                      <option value="legend">Legend</option>
+                      <option value="layerlist">LayerList</option>
+                      <option value="track">Track</option>
                       <option value="basemaptoggle">Basemaptoggle</option>
                       <option value="search">Search</option>
                     </select>
@@ -726,6 +738,9 @@
                       <option value="home">Home</option>
                       <option value="locate">Locate</option>
                       <option value="compass">Compass</option>
+                      <option value="legend">Legend</option>
+                      <option value="layerlist">LayerList</option>
+                      <option value="track">Track</option>
                       <option value="basemaptoggle">Basemaptoggle</option>
                       <option value="search">Search</option>
                     </select>
@@ -801,6 +816,9 @@
 
   <script type="text/javascript">
     var dojoConfig = {
+      has: {
+          "esri-promise-compatibility-deprecation-warnings": 0 // TODO
+      },
       packages: [{
         name: "bootstrap",
         location: location.pathname.replace(/\/[^/]+$/, "") + "./../../dist/vendor/dojo-bootstrap"
@@ -818,7 +836,7 @@
   </script>
 
   <!-- ArcGIS JS 4.x -->
-  <script src="https://js.arcgis.com/4.6/"></script>
+  <script src="https://js.arcgis.com/4.9/"></script>
 
   <script>
     
@@ -828,6 +846,7 @@
       // ArcGIS
       "esri/Map",
       "esri/Basemap",
+      "esri/WebMap",
       "esri/layers/VectorTileLayer",
       "esri/views/MapView",
       "esri/views/SceneView",
@@ -843,8 +862,8 @@
       "dojo/on",
 
       // Calcite Maps
-      "calcite-maps/calcitemaps-v0.5",
-      "calcite-maps/calcitemaps-arcgis-support-v0.5",
+      "calcite-maps/calcitemaps-v0.9",
+      "calcite-maps/calcitemaps-arcgis-support-v0.9",
       //"calcite-maps/calcitemaps",
       "calcite-settings/panelsettings",
 
@@ -858,12 +877,12 @@
 
       // Dojo
       "dojo/domReady!"
-    ], function(Map, Basemap, VectorTileLayer, MapView, SceneView, Search, Popup, Home, Legend, ColorPicker, 
+    ], function(Map, Basemap, Webmap, VectorTileLayer, MapView, SceneView, Search, Popup, Home, Legend, ColorPicker, 
       watchUtils, query, domClass, dom, on, CalciteMapsSettings, CalciteMapsArcGISSupport, PanelSettings) {
       
       app = {
-        scale: 50000000,
-        lonlat: [-40,40],
+        zoom: 2,
+        lonlat: [-40,0],
         mapView: null, 
         mapDiv: "mapViewDiv",
         mapFL: null,
@@ -877,14 +896,16 @@
         searchWidgetSettings: null,
         basemapSelected: "gray",
         basemapSelectedAlt: "gray",
+        webmap: null,
+        webmapId: "df5b4bad631d4209b6ef7a88493dac7d",
         padding: { 
-          top: 85 ,
+          top: 50 ,
           right: 0,
           bottom: 0,
           left: 0
         }, 
         uiPadding: { 
-          components:["zoom", "attribution", "home"],
+          components: ["zoom","attribution"],
           padding: {
             top: 15,
             right: 15,
@@ -910,48 +931,42 @@
       // App
       //----------------------------------
 
+      //app.panelSettings = new PanelSettings( { app: app } );
+
       initializeMapViews();
       initializeAppUI();
-
-      // Panel settings
-      app.panelSettings = new PanelSettings( { app: app } );
-      app.panelSettings.activeLayout = app.panelSettings.APP_LAYOUTS.TOP;
-      app.panelSettings.setLayout(app.panelSettings.activeLayout, false);
-
-      // Set padding for navs that change height
-      if (window.innerWidth < app.activeView.breakpoints.small && app.panelSettings.activeLayout.viewPaddingSmallScreen) {
-        app.panelSettings.setPadding(app.panelSettings.activeLayout.viewPaddingSmallScreen, app.panelSettings.activeLayout.uiPadding);
-      }
-
+      initializeAppSettings();
+      initializeWidgets();
+      
       //----------------------------------
       // Map and Scene View
       //----------------------------------
 
       function initializeMapViews() {
-
-        //2D - MapView
+        // Webmap
+        app.webmap = new Webmap({
+          portalItem: {
+            id: app.webmapId
+          }
+        });
+        // 2D - MapView
         app.mapView = new MapView({
           container: app.mapDiv,
-          map: new Map( { basemap: app.basemapSelected, constraints: { snapToZoom: false } } ),
-          scale: app.scale,
+          map: app.webmap,
+          zoom: app.zoom,
           center: app.lonlat, 
           padding: app.padding,
           ui: app.uiPadding, 
           popup: new Popup(app.popupOptions),
-          visible: true
+          visible: true        
         });
-
-        //app.mapView.ui.add(new Home({view: app.mapView}), "top-left");
-
-        //Set active view
+        // Set active view
         app.activeView = app.mapView;
-
-        //3D - SceneView
+        // 3D - SceneView
         app.sceneView = new SceneView({ 
           container: app.sceneDiv,
-          map: new Map( { basemap: app.basemapSelectedAlt, ground: "world-elevation", constraints: { snapToZoom: false } } ),
-
-          scale: app.scale,
+          map: app.webmap, 
+          zoom: app.zoom,
           center: app.lonlat, 
           padding: app.padding,
           ui: app.uiPadding, 
@@ -959,11 +974,12 @@
           visible: false
         });
 
-        //app.sceneView.ui.add(new Home({view: app.sceneView}), "top-left");
-
         // Listen for view breakpoint changes and update control location
         app.mapView.watch("widthBreakpoint", function(newVal, oldVal) {
           function setPadding(newVal, oldVal) {
+            if (!app.panelSettings) {
+              return;
+            }
             if (newVal === "small" && oldVal === "medium") {
               app.panelSettings.setPadding(app.panelSettings.activeLayout.viewPaddingSmallScreen, app.panelSettings.activeLayout.uiPadding);
             } else if (newVal === "medium" && oldVal === "small") {
@@ -975,6 +991,47 @@
             setPadding(newVal, oldVal);
           }
         });
+      }
+
+      //----------------------------------
+      // View widgets
+      //----------------------------------
+
+      function initializeWidgets() {
+        app.mapView.when(function() {
+          app.panelSettings.setWidgetPosition(app.mapView, "home", "top-left", 0);
+          //app.panelSettings.setWidgetPosition(app.mapView, "zoom", "top-left", 1);
+          app.panelSettings.setWidgetPosition(app.mapView, "compass", "top-left");          
+        });
+        
+        app.sceneView.when(function() {
+          app.panelSettings.setWidgetPosition(app.sceneView, "home", "top-left", 0);
+          //app.panelSettings.setWidgetPosition(app.sceneView, "zoom", "top-left");
+          app.panelSettings.setWidgetPosition(app.sceneView, "compass", "top-left");
+          app.panelSettings.setWidgetPosition(app.sceneView, "navtoggle", "top-left");
+        });
+
+        // Panel widgets
+        app.panelSettings.setWidgetPosition(app.mapView, "legend", "top-left", 0, "legendDiv");
+        app.panelSettings.setWidgetPosition(app.mapView, "layerlist", "top-left", 0, "layerlistDiv");
+        app.panelSettings.setWidgetPosition(app.mapView, "print", "top-left", 0, "printDiv");
+
+      }
+
+      //----------------------------------
+      // App panel settings
+      //----------------------------------
+
+      function initializeAppSettings() {
+        // Panel settings
+        app.panelSettings = new PanelSettings( { app: app } );
+        app.panelSettings.activeLayout = app.panelSettings.APP_LAYOUTS.TOP;
+        app.panelSettings.setLayout(app.panelSettings.activeLayout, false);
+
+        // Set padding for navs that change height
+        if (window.innerWidth < app.activeView.breakpoints.small && app.panelSettings.activeLayout.viewPaddingSmallScreen) {
+          app.panelSettings.setPadding(app.panelSettings.activeLayout.viewPaddingSmallScreen, app.panelSettings.activeLayout.uiPadding);
+        }        
       }
 
       //----------------------------------
@@ -1001,8 +1058,6 @@
 
         // Tab event
         query(".calcite-navbar li a[data-toggle='tab']").on("show.bs.tab", function(e) {  
-          // Tabs
-          syncTabs(e);
           // Views
           if (e.target.text.indexOf("Map") > -1) {
             syncViews(app.sceneView, app.mapView);
@@ -1019,21 +1074,20 @@
           });
         });
 
-        // Tabs
-        function syncTabs(e) {
-          query(".calcite-navbar li.active").removeClass("active");       
-          query(e.target).addClass("active");
-        }
-
         // Views
         function syncViews(fromView, toView) {
-          watchUtils.whenTrueOnce(toView, "ready").then(function(result) {
-            watchUtils.whenTrueOnce(toView, "stationary").then(function(result) {
-              toView.goTo(fromView.viewpoint);
-              toView.popup.reposition();
-            });
+          watchUtils.whenTrueOnce(fromView, "ready", function(){
+            var viewPt = fromView.viewpoint.clone();
+            fromView.container = null;
+            if (fromView.type === "3d") {          
+              toView.container = app.mapDiv;
+            } else {
+              toView.container = app.sceneDiv;
+            }
+            toView.viewpoint = viewPt;
+            toView.padding = fromView.padding;
           });
-        }
+        } 
 
         // Search
         function syncSearch() {
@@ -1090,7 +1144,6 @@
               maxSuggestions: 4
             },
             }, parentId);
-          search.startup();
           return search;
         } 
       }
@@ -1105,20 +1158,6 @@
             showRecentColors: false,
             showTransparencySlider: false
           }, "colorPickerDiv");
-        app.colorPickerWidget.startup();
-      }
-
-      //----------------------------------
-      // Popups and Panels
-      //----------------------------------
-
-      //----------------------------------
-      // Popup collapse (optional)
-      //----------------------------------
-
-      function setSearchEvents() {   
-
-
       }
 
       //----------------------------------

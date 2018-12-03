@@ -3,7 +3,7 @@
   height: 100%;
   width: 100%; }
 
-.calcite-maps .esri-widget .esri-widget-button, .calcite-maps .esri-widget.esri-widget-button {
+.esri-widget .calcite-mapsdiv:not(.esri-directions) .esri-widget-button, .esri-widget .calcite-mapsdiv:not(.esri-directions).esri-widget-button {
   width: 30px;
   height: 30px;
   font-size: 13px; }
